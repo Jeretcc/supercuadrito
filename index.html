@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Súper Cuadrito</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#00ffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Cuadrito">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" type="image/png" href="icon-32.png">
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; background: #0a0a1e; overflow: hidden; }
+  body {
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-family: Arial, sans-serif;
+  }
+  #info {
+    text-align: center; padding: 20px;
+  }
+  #info h1 { color: #00ffff; text-shadow: 3px 3px 0 #000; letter-spacing: 2px; }
+  /* Pygbag inyecta un canvas; lo dejamos a pantalla completa */
+  canvas { display: block; margin: 0 auto; touch-action: none; }
+</style>
+</head>
+<body>
+  <div id="info">
+    <h1>SÚPER CUADRITO</h1>
+    <p>Esta página se reemplaza automáticamente al ejecutar:<br/>
+    <code style="background:#000;padding:4px 8px;border-radius:4px;color:#0ff">pygbag super_cuadrito_pygbag</code></p>
+    <p style="opacity:0.6;font-size:13px">Pygbag genera el index.html final con el canvas y el runtime de Python.</p>
+  </div>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>
