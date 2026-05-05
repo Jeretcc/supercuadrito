@@ -1,7 +1,5 @@
 # Súper Cuadrito — Paquete Pygbag listo
 
-Juego de tu hijo adaptado para correr en Android/iPhone como app instalable.
-
 ## Estructura
 
 ```
